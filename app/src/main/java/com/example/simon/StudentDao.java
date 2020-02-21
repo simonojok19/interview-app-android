@@ -20,9 +20,9 @@ public interface StudentDao {
     @Query("SELECT * from student_table ORDER BY mId ASC")
     List<Student> getAllStudent();
 
-    @Update
+    @Update(entity = Student.class)
     void updateStudent(Student student);
 
-    @Delete
+    @Delete(entity = Student.class)
     void deleteStudent(Student student);
 }
