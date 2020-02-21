@@ -1,6 +1,7 @@
 package com.example.simon;
 
 import androidx.room.Dao;
+import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
@@ -18,4 +19,10 @@ public interface StudentDao {
 
     @Query("SELECT * from student_table ORDER BY mId ASC")
     List<Student> getAllStudent();
+
+    @Update
+    void updateStudent(Student student);
+
+    @Delete
+    void deleteStudent(Student student);
 }
