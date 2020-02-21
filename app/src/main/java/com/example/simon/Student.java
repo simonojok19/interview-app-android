@@ -1,11 +1,26 @@
 package com.example.simon;
 
 import androidx.annotation.NonNull;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
+@Entity(tableName = "student_table")
 public class Student {
+    @PrimaryKey(autoGenerate = true)
+    private int mId;
+
+
+    @ColumnInfo(name="name")
     private String mName;
+
+    @ColumnInfo(name = "class")
     private String mClass;
+
+    @ColumnInfo(name = "school")
     private String mSchool;
+
+    @ColumnInfo(name = "district")
     private String mDistrict;
 
     public Student(@NonNull  String mName, String mClass, String mSchool, String mDistrict) {
@@ -45,5 +60,13 @@ public class Student {
 
     public String getmDistrict() {
         return mDistrict;
+    }
+
+    public int getmId() {
+        return mId;
+    }
+
+    public void setmId(int mId) {
+        this.mId = mId;
     }
 }
