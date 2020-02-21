@@ -1,5 +1,6 @@
 package com.example.simon;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -18,7 +19,7 @@ public interface StudentDao {
     void deleteAllStudent();
 
     @Query("SELECT * from student_table ORDER BY mId ASC")
-    List<Student> getAllStudent();
+    LiveData<List<Student>> getAllStudent();
 
     @Update(entity = Student.class)
     void updateStudent(Student student);
